@@ -79,7 +79,20 @@ export default function App() {
       <header className="app-header">
         <div className="header-content">
           <div className="header-brand">
-            <div className="brand-icon">✦</div>
+            <div className="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* Notepad body */}
+                <rect x="3" y="4" width="18" height="17" rx="2.5" fill="white" fillOpacity="0.15" stroke="white" strokeWidth="1.5"/>
+                {/* Spiral holes */}
+                <circle cx="8" cy="4" r="1.5" fill="white" fillOpacity="0.9"/>
+                <circle cx="12" cy="4" r="1.5" fill="white" fillOpacity="0.9"/>
+                <circle cx="16" cy="4" r="1.5" fill="white" fillOpacity="0.9"/>
+                {/* Lines */}
+                <line x1="7" y1="10" x2="17" y2="10" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeOpacity="0.8"/>
+                <line x1="7" y1="14" x2="17" y2="14" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeOpacity="0.8"/>
+                <line x1="7" y1="18" x2="13" y2="18" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeOpacity="0.8"/>
+              </svg>
+            </div>
             <div>
               <h1 className="brand-title">TaskFlow</h1>
               <p className="brand-subtitle">Gerenciador de Tarefas</p>

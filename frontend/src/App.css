@@ -323,7 +323,40 @@ body::before {
   font-size: 13px;
   border: 1px dashed var(--border);
   border-radius: var(--radius-md);
+  transition: var(--transition);
 }
+
+.column-empty-active {
+  border-color: var(--accent-purple);
+  color: var(--accent-purple);
+  background: rgba(167, 139, 250, 0.05);
+}
+
+.column-drag-over .column-body {
+  background: rgba(167, 139, 250, 0.04);
+  border-radius: var(--radius-md);
+}
+
+.column-drag-over {
+  filter: drop-shadow(0 0 12px rgba(167, 139, 250, 0.15));
+}
+
+.drop-placeholder {
+  border: 2px dashed;
+  border-radius: var(--radius-md);
+  padding: 12px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  opacity: 0.7;
+  animation: pulseIn 0.2s ease;
+}
+
+@keyframes pulseIn {
+  from { opacity: 0; transform: scaleY(0.8); }
+  to { opacity: 0.7; transform: scaleY(1); }
+}
+
 
 /* ========== TASK CARD ========== */
 .task-card {
@@ -354,6 +387,38 @@ body::before {
   pointer-events: none;
   transform: scale(0.97);
 }
+
+.task-card-dragging {
+  opacity: 0.35;
+  transform: scale(0.97) rotate(1deg);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+  border-color: var(--accent-purple) !important;
+  cursor: grabbing;
+}
+
+.task-card[draggable='true'] {
+  cursor: grab;
+}
+
+.task-card[draggable='true']:active {
+  cursor: grabbing;
+}
+
+.drag-handle {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: right;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: opacity var(--transition);
+  user-select: none;
+}
+
+.task-card:hover .drag-handle {
+  opacity: 1;
+}
+
 
 .task-card-header {
   display: flex;

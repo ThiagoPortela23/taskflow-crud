@@ -18,7 +18,7 @@ const PRIORIDADE_COLORS = {
   alta: '#f87171',
 };
 
-export default function TaskCard({ tarefa, onEdit, onDelete, onStatusChange }) {
+export default function TaskCard({ tarefa, onEdit, onDelete, onStatusChange, onDragStart, onDragEnd, isDragging }) {
   const [deleting, setDeleting] = useState(false);
 
   const handleDelete = async () => {
@@ -39,7 +39,15 @@ export default function TaskCard({ tarefa, onEdit, onDelete, onStatusChange }) {
   });
 
   return (
-    <div className={`task-card ${deleting ? 'deleting' : ''}`} data-prioridade={tarefa.prioridade}>
+    <div
+      className={`task-card ${deleting ? 'deleting' : ''} ${isDragging ? 'task-card-dragging' : ''}`}
+      data-prioridade={tarefa.prioridade}
+      draggable={!deleting}
+      onDragStart={(e) => onDragStart && onDragStart(e, tarefa.id)}
+      onDragEnd={() => onDragEnd && onDragEnd()}
+    >
+      <div className="drag-handle" title="Arraste para mover">⠿</div>
+
       <div className="task-card-header">
         <span
           className="prioridade-badge"
