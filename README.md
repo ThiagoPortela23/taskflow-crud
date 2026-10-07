@@ -70,7 +70,7 @@ taskflow-crud/
 
 ---
 
-## 🚀 Como Instalar e Rodar
+##  Como Instalar e Rodar
 
 ### Pré-requisitos
 
@@ -181,7 +181,7 @@ Saída esperada:
 ```
 ✅ Conexão com o PostgreSQL estabelecida com sucesso!
 ✅ Tabelas sincronizadas com sucesso!
-🚀 Servidor rodando em http://localhost:3001
+ Servidor rodando em http://localhost:3001
 ```
 
 **Terminal 2 — Frontend:**
@@ -234,7 +234,7 @@ Base URL: `http://localhost:3001/api`
 
 ---
 
-## 🧰 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 ### Backend
 | Tecnologia  | Versão | Função                              |
